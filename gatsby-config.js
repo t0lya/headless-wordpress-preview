@@ -10,20 +10,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -63,7 +49,6 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
@@ -75,15 +60,15 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql-universal",
+      resolve: 'gatsby-source-graphql-universal',
       options: {
         // This type will contain remote schema Query type
-        typeName: "WPGraphQL",
+        typeName: 'WPGraphQL',
         // This is field under which it's accessible
-        fieldName: "wpgraphql",
+        fieldName: 'wpgraphql',
         // Url to query from
         url: `http://127.0.0.1/graphql`,
       },
     },
   ],
-}
+};
